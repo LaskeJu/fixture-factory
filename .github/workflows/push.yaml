@@ -18,7 +18,6 @@ jobs:
           architecture: x64
       - name: Run spring javaformat validation
         run: mvn spring-javaformat:validate
-        working-directory: ./src
 
   test:
     name: Test
@@ -34,4 +33,3 @@ jobs:
           architecture: x64
       - name: Run tests
         run: mvn test
-        working-directory: ./src
