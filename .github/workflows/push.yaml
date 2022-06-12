@@ -1,0 +1,37 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+
+  coding-standards:
+    name: Coding Standards
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 18
+        uses: actions/setup-java@v2
+        with:
+          java-version: '18'
+          distribution: 'adopt'
+          architecture: x64
+      - name: Run spring javaformat validation
+        run: mvn spring-javaformat:validate
+        working-directory: ./src
+
+  test:
+    name: Test
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 18
+        uses: actions/setup-java@v2
+        with:
+          java-version: '18'
+          distribution: 'adopt'
+          architecture: x64
+      - name: Run tests
+        run: mvn test
+        working-directory: ./src
