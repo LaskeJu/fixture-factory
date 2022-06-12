@@ -17,7 +17,7 @@ jobs:
           distribution: 'adopt'
           architecture: x64
       - name: Run spring javaformat validation
-        run: mvn spring-javaformat:validate
+        run: mvn install
 
   test:
     name: Test

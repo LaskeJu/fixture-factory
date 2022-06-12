@@ -25,16 +25,10 @@
             <version>1.0.2</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.googlejavaformat</groupId>
+            <artifactId>google-java-format</artifactId>
+            <version>1.15.0</version>
+        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>io.spring.javaformat</groupId>
-                <artifactId>spring-javaformat-maven-plugin</artifactId>
-                <version>0.0.31</version>
-            </plugin>
-        </plugins>
-    </build>
-
 </project>
