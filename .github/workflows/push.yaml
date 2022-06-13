@@ -4,20 +4,13 @@ on: [push]
 
 jobs:
 
-  coding-standards:
-    name: Coding Standards
-    runs-on: ubuntu-18.04
-
+  formatting:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up JDK 18
-        uses: actions/setup-java@v2
+      - uses: actions/checkout@v2 # v2 minimum required
+      - uses: axel-op/googlejavaformat-action@v3
         with:
-          java-version: '18'
-          distribution: 'adopt'
-          architecture: x64
-      - name: Run spring javaformat validation
-        run: mvn install
+          args: "--set-exit-if-changed"
 
   test:
     name: Test
