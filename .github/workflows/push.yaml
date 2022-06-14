@@ -35,4 +35,4 @@ jobs:
       - uses: actions/checkout@master
       - uses: codecov/codecov-action@v2
         with:
-          files: ../target/jacoco.exec
+          files: ./target/jacoco.exec
