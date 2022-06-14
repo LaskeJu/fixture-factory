@@ -26,3 +26,11 @@ jobs:
           architecture: x64
       - name: Run tests
         run: mvn test
+
+  codecov:
+    name: Code Coverage
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@master
+      - uses: codecov/codecov-action@v2
