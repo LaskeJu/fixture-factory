@@ -42,6 +42,5 @@ jobs:
           architecture: x64
       - name: Run tests
         run: mvn test
-      - uses: codecov/codecov-action@v2
-        with:
-          files: ./target/jacoco.exec
+      - name: Upload coverage reports to Codecov with GitHub Action
+        uses: codecov/codecov-action@v3
