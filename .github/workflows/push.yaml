@@ -38,8 +38,8 @@ jobs:
           java-version: '18'
           distribution: 'adopt'
           architecture: x64
-        - name: Run tests
-          run: mvn test
+      - name: Run tests
+        run: mvn test
       - uses: codecov/codecov-action@v2
         with:
           files: ./target/jacoco.exec
