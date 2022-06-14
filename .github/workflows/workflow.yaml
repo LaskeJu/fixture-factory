@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2 # v2 minimum required
+      - uses: actions/checkout@v2
       - uses: axel-op/googlejavaformat-action@v3
         with:
           args: "--set-exit-if-changed"
@@ -45,4 +45,8 @@ jobs:
       - name: Upload coverage reports to Codecov with GitHub Action
         uses: codecov/codecov-action@v3
         with:
-          files: ./target/jacoco.exec
+          files: ./target/site/jacoco/jacoco.xml
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
